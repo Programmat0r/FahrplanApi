@@ -1,0 +1,30 @@
+# FahrplanApi
+An unofficial library to connect to the Deutsche Bahn Fahrplan API.
+<h1>Endpoints</h1>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>location</td>
+<td>LocationApi</td>
+</tr>
+<tr>
+<td>arrivalBoard</td>
+<td>ArrivalBoardApi</td>
+</tr>
+<tr>
+<td>departureBoard</td>
+<td>DepartureBoardApi</td>
+</tr>
+<tr>
+<td>journeyDetails</td>
+<td>JourneyDetailsApi</td>
+</tr>
+</tr>
+</tbody>
+</table>
