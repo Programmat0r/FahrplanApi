@@ -1,6 +1,11 @@
 # FahrplanApi
-An unofficial library to connect to the Deutsche Bahn Fahrplan API.
-<h1>Endpoints</h1>
+An unofficial .Net library to connect to the Deutsche Bahn Fahrplan API.
+
+<h2>Requirements</h2>
+<p><b>.Net Framework 4.7.2</b></p>
+<p>This library was programmed in .Net Framework 4.7.2. You can download it and decrease the .Net version as much as you need it. I didn't tested it below the mentioned version and don't know if it will work.</p>
+
+<h2>Endpoints</h2>
 <table>
 <thead>
 <tr>
