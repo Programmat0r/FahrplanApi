@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -7,31 +8,22 @@ using System.Threading.Tasks;
 
 namespace Fahrplan
 {
-    class ArrivalBoard : IApiEndpoint<ArrivalBoard[]>
+    public class ArrivalBoard
     {
-        public String Id { get; private set; }
-        public Board[] Boards { get; private set; }
-
-        public Authentication ApiAuthentication => throw new NotImplementedException();
-
-        public ArrivalBoard(String id)
+        [JsonConstructor]
+        public ArrivalBoard(string name, string type, string boardId, string stopId, string stopName, string dateTime, string origin, string track, string detailsId)
         {
-            if (id is null || id == "")
-                throw new ArgumentNullException("ArrivalBoard id can't be empty");
-
-            this.Id = id;
+            Name = name ?? throw new ArgumentNullException(nameof(name));
+            Type = type ?? throw new ArgumentNullException(nameof(type));
+            BoardId = boardId ?? throw new ArgumentNullException(nameof(boardId));
+            StopId = stopId ?? throw new ArgumentNullException(nameof(stopId));
+            StopName = stopName ?? throw new ArgumentNullException(nameof(stopName));
+            DateTime = dateTime ?? throw new ArgumentNullException(nameof(dateTime));
+            Origin = origin ?? throw new ArgumentNullException(nameof(origin));
+            Track = track ?? throw new ArgumentNullException(nameof(track));
+            DetailsId = detailsId ?? throw new ArgumentNullException(nameof(detailsId));
         }
 
-        public ArrivalBoard[] Get()
-        {
-            throw new NotImplementedException();
-        }
-
-    
-    }
-
-    class Board
-    {
         public String Name { get; protected set; }
         public String Type { get; protected set; }
         public String BoardId { get; protected set; }
@@ -41,8 +33,6 @@ namespace Fahrplan
         public String Origin { get; protected set; }
         public String Track { get; protected set; }
         public String DetailsId { get; protected set; }
-
-
     }
 
 }

@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrivalBoardApi.cs" />
     <Compile Include="IApiEndpoint.cs" />
     <Compile Include="ArrivalBoard.cs" />
     <Compile Include="Authentication.cs" />

@@ -37,18 +37,15 @@
         /// Initializes a new instance of the <see cref="Location"/> class.
         /// </summary>
         /// <param name="name">The name<see cref="String"/>.</param>
-        public Location(String name)
-        {
-         
-        }
-
+       
         [JsonConstructor]
-        public Location(string name, long lon, long lat, string id) : this(name)
+        public Location(string name, long lon, long lat, string id)
         {
             Lon = lon;
             Lat = lat;
             Name = name ?? throw new ArgumentNullException(nameof(name));
             Id = id ?? throw new ArgumentNullException(nameof(id));
         }
+
     }
 }

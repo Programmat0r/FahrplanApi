@@ -43,8 +43,10 @@ namespace Fahrplan
                 case Authentication.AuthenticationType.UsernamePassword:
                     NetworkCredential networkCredentials = new NetworkCredential(this.ApiAuthentication.Username, this.ApiAuthentication.Password);
 
-                    CredentialCache credentialCache = new CredentialCache();
-                    credentialCache.Add(request.RequestUri, "Basic", networkCredentials);
+                    CredentialCache credentialCache = new CredentialCache
+                    {
+                        { request.RequestUri, "Basic", networkCredentials }
+                    };
                     break;
             }
            
@@ -61,5 +63,5 @@ namespace Fahrplan
            
 
         }
-    }
 }
+

@@ -14,8 +14,11 @@ namespace FahrplanClient
         {
             String token = File.ReadAllText("Token.key");
 
-            LocationApi locationApi = new Fahrplan.LocationApi("Frankfurt", new Authentication(token));
-            var locations = locationApi.Get();
+            // LocationApi locationApi = new Fahrplan.LocationApi("Frankfurt", new Authentication(token));
+            //var locations = locationApi.Get();
+            ArrivalBoardApi arrivalBoardApi = new ArrivalBoardApi("8096021", new Authentication(token), DateTime.Now);
+            var boards = arrivalBoardApi.Get();
+
         }
     }
 }
