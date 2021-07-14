@@ -41,6 +41,7 @@
 </table>
 
 <h2>Examples</h2>
+<p><a href="https://github.com/Programmat0r/FahrplanApi/blob/main/FahrplanClient/Program.cs">Here</a> is a reference implementation.</a>
 <p>Get all locations containing "Frankfurt"</p>
 
 ```csharp
