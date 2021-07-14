@@ -33,7 +33,7 @@
         /// <param name="name">The name<see cref="String"/>.</param>
         public Location(String name)
         {
-            if (name is null)
+            if (name is null || name == "")
                 throw new ArgumentNullException("Location name can't be empty");
 
             this.Name = name;
