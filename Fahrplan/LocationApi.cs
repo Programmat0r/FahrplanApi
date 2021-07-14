@@ -14,6 +14,7 @@ namespace Fahrplan
         public String Name { get; private set; }
         public Authentication ApiAuthentication { get; private set; }
         public bool TestMode { get; set; }
+        public bool SecureConnection { get; set; }
 
         public LocationApi(String name, Authentication apiAuthentication)
         {
@@ -29,7 +30,7 @@ namespace Fahrplan
 
         public Location[] Get()
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Api.GetEndpoint(this.TestMode) + "location/" + this.Name);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Api.GetEndpoint(this.TestMode, this.SecureConnection) + "location/" + this.Name);
 
             request.PreAuthenticate = true;
             request.Accept = "application/json";

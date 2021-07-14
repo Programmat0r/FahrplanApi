@@ -15,6 +15,7 @@ namespace Fahrplan
         public String Id { get; private set; }
         public DateTime Date { get; private set; }
         public bool TestMode { get; set; }
+        public bool SecureConnection { get; set; }
 
         public DepartureBoardApi(String id, Authentication apiAuthentication, DateTime date)
         {
@@ -37,7 +38,7 @@ namespace Fahrplan
 
         public Board[] Get()
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create( Api.GetEndpoint(this.TestMode) + "departureBoard/" + this.Id + "?date=" + this.Date.ToString("yyyy-MM-ddThh:mm:ss"));
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create( Api.GetEndpoint(this.TestMode, this.SecureConnection) + "departureBoard/" + this.Id + "?date=" + this.Date.ToString("yyyy-MM-ddThh:mm:ss"));
 
             request.PreAuthenticate = true;
             request.Accept = "application/json";

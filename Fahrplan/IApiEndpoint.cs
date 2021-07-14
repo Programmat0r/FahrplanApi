@@ -10,6 +10,7 @@ namespace Fahrplan
     {
         Authentication ApiAuthentication { get;}
         bool TestMode { get; set; }
+        bool SecureConnection { get; set; }
 
         T Get();
 

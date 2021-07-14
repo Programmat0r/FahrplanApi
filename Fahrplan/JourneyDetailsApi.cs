@@ -28,10 +28,13 @@ namespace Fahrplan
 
         public String Id { get; private set; }
         public bool TestMode { get; set; }
+        public bool SecureConnection { get; set; }
 
         public TrainLocs[] Get()
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Api.GetEndpoint(this.TestMode) + "journeyDetails/" + this.Id);
+            var urlEncodedId = WebUtility.UrlEncode(this.Id);
+        
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Api.GetEndpoint(this.TestMode, this.SecureConnection) + "journeyDetails/" + urlEncodedId);
 
             request.PreAuthenticate = true;
             request.Accept = "application/json";

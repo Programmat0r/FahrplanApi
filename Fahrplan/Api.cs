@@ -8,12 +8,27 @@ namespace Fahrplan
 {
    public class Api
     {
-        public static String GetEndpoint(bool testMode)
+        public static String GetEndpoint(bool testMode, bool secure = true)
         {
-            if (testMode)
-                return "https://api.deutschebahn.com/freeplan/v1/";
 
-            return "https://api.deutschebahn.com/fahrplan-plus/v1/";
+            String endpoint = "";
+
+            if (secure)
+            {
+                endpoint = "https://";
+            } else
+            {
+                endpoint = "http://";
+            }
+
+            if (testMode)
+            {
+                return endpoint + "api.deutschebahn.com/freeplan/v1/";
+            } else
+            {
+                return endpoint + "api.deutschebahn.com/fahrplan-plus/v1/";
+            }
+
         }
     }
 }
