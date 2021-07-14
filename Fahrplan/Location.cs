@@ -8,22 +8,22 @@
     public class Location
     {
         /// <summary>
-        /// Gets the Name.
+        /// Gets the name of the location.
         /// </summary>
         public String Name { get; private set; }
 
         /// <summary>
-        /// Gets the Lon.
+        /// Gets the Longitude of the location.
         /// </summary>
         public long Lon { get; private set; }
 
         /// <summary>
-        /// Gets the Lat.
+        /// Gets the Latitude of the location.
         /// </summary>
         public long Lat { get; private set; }
 
         /// <summary>
-        /// Gets the Id.
+        /// Gets the Id of the location.
         /// </summary>
         public String Id { get; private set; }
 
