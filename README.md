@@ -1,9 +1,15 @@
 # FahrplanApi
-An unofficial .Net library to connect to the Deutsche Bahn Fahrplan API.
+<p>An unofficial .Net library to connect to the Deutsche Bahn Fahrplan API.</p>
+
+<p>I am an independet developer and i am not business related (or in any other way) to the Deutsche Bahn AG.</p>
+
+<p>This is just a library to help other programmers to develop applications using the Deutsche Bahn API.</p>
 
 <h2>Requirements</h2>
 <p><b>.Net Framework 4.7.2</b></p>
 <p>This library was programmed in .Net Framework 4.7.2. You can download it and decrease the .Net version as much as you need it. I didn't tested it below the mentioned version and don't know if it will work.</p>
+<p><b>To use this library you need to add Newtonsoft.JSON. It's explained <a href="https://www.nuget.org/packages/Newtonsoft.Json/">here</a> how to get it.</p></b>
+<p>You also need an API Token or an developer Account. You can create register <a href="https://developer.deutschebahn.com/store/site/pages/sign-up.jag">here</a>
 
 <h2>Endpoints</h2>
 <table>
@@ -66,3 +72,4 @@ var journeyDetailsApi = new JourneyDetailsApi(arrivals[0].DetailsId, new Authent
 journeyDetailsApi.TestMode = true;
 var journeyDetails = journeyDetailsApi.Get();
 ```
+
