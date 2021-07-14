@@ -59,3 +59,7 @@ journeyDetailsApi.SecureConnection = true;
 var journeyDetails = journeyDetailsApi.Get();
 ```
 
+<h2>License</h2>
+
+<p>Code - <a href="http://www.apache.org/licenses/LICENSE-2.0">APACHE LICENSE, VERSION 2.0</a></p>
+
