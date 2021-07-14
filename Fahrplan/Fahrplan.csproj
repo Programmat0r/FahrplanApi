@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrivalBoard.cs" />
+    <Compile Include="Authentication.cs" />
     <Compile Include="DepartureBoard.cs" />
     <Compile Include="JourneyDetails.cs" />
     <Compile Include="Location.cs" />
