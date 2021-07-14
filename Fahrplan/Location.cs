@@ -1,6 +1,7 @@
 ﻿namespace Fahrplan
 {
     using System;
+    using System.Net;
 
     /// <summary>
     /// Defines the <see cref="Location" />.
@@ -37,6 +38,13 @@
                 throw new ArgumentNullException("Location name can't be empty");
 
             this.Name = name;
+        }
+
+        public void Get()
+        {
+            WebRequest request = WebRequest.Create("https://api.deutschebahn.com/freeplan/v1/location/" + this.Name);
+          
+            WebResponse response = request.GetResponse();
         }
     }
 }
