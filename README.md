@@ -1,4 +1,4 @@
-# Deutsche Bahn Fahrplan Library
+# Deutsche Bahn Fahrplan API Library
 <p>An unofficial .Net library to connect to the Deutsche Bahn Fahrplan API.</p>
 
 <p>I am an independet developer and i am not business related (or in any other way) to the Deutsche Bahn AG.</p>
