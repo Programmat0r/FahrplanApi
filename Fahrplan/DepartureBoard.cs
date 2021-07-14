@@ -8,5 +8,11 @@ namespace Fahrplan
 {
     class DepartureBoard
     {
+        public Authentication ApiAuthentication => throw new NotImplementedException();
+
+        public void Get()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

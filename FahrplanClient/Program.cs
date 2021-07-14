@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Fahrplan;
 
 namespace FahrplanClient
 {
@@ -13,7 +14,8 @@ namespace FahrplanClient
         {
             String token = File.ReadAllText("Token.key");
 
-
+            LocationApi locationApi = new Fahrplan.LocationApi("Frankfurt", new Authentication(token));
+            var locations = locationApi.Get();
         }
     }
 }

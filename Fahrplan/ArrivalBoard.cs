@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 
 namespace Fahrplan
 {
-    class ArrivalBoard
+    class ArrivalBoard : IApiEndpoint<ArrivalBoard[]>
     {
         public String Id { get; private set; }
         public Board[] Boards { get; private set; }
+
+        public Authentication ApiAuthentication => throw new NotImplementedException();
 
         public ArrivalBoard(String id)
         {
@@ -19,6 +21,13 @@ namespace Fahrplan
 
             this.Id = id;
         }
+
+        public ArrivalBoard[] Get()
+        {
+            throw new NotImplementedException();
+        }
+
+    
     }
 
     class Board

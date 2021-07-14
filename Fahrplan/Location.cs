@@ -1,6 +1,8 @@
 ﻿namespace Fahrplan
 {
+    using Newtonsoft.Json;
     using System;
+    using System.IO;
     using System.Net;
 
     /// <summary>
@@ -27,6 +29,9 @@
         /// Gets the Id of the location.
         /// </summary>
         public String Id { get; private set; }
+      
+
+
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Location"/> class.
@@ -34,17 +39,16 @@
         /// <param name="name">The name<see cref="String"/>.</param>
         public Location(String name)
         {
-            if (name is null || name == "")
-                throw new ArgumentNullException("Location name can't be empty");
-
-            this.Name = name;
+         
         }
 
-        public void Get()
+        [JsonConstructor]
+        public Location(string name, long lon, long lat, string id) : this(name)
         {
-            WebRequest request = WebRequest.Create("https://api.deutschebahn.com/freeplan/v1/location/" + this.Name);
-          
-            WebResponse response = request.GetResponse();
+            Lon = lon;
+            Lat = lat;
+            Name = name ?? throw new ArgumentNullException(nameof(name));
+            Id = id ?? throw new ArgumentNullException(nameof(id));
         }
     }
 }

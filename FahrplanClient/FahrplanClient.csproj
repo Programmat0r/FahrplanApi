@@ -52,5 +52,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fahrplan\Fahrplan.csproj">
+      <Project>{2ed93756-ab71-49c2-adfb-6a3f72a9ab1e}</Project>
+      <Name>Fahrplan</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Fahrplan
 {
-    class Authentication
+   public class Authentication
     {
         
         public String TokenBearer { get; private set; }
         public String Username { get; private set; }
         public String Password { get; private set; }
+        public AuthenticationType Type { get; set; }
         public enum AuthenticationType
         {
             Bearer,
@@ -22,6 +23,7 @@ namespace Fahrplan
             if (tokenBearer is null || tokenBearer == "")
                 throw new ArgumentNullException("TokenBearer can't be empty");
             this.TokenBearer = tokenBearer;
+            this.Type = AuthenticationType.Bearer;
         }
 
         public Authentication(String username, String password)
@@ -31,6 +33,7 @@ namespace Fahrplan
             
             this.Username = username;
             this.Password = password;
+            this.Type = AuthenticationType.UsernamePassword;
         }
        
 

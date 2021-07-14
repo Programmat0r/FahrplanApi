@@ -8,6 +8,11 @@ namespace Fahrplan
 {
     class JourneyDetails
     {
-     
+        public Authentication ApiAuthentication { get; private set; }
+
+        public void Get()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
