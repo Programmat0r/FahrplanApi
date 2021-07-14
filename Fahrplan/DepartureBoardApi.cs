@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace Fahrplan
 {
-    public class ArrivalBoardApi : IApiEndpoint<Board[]>
+   public class DepartureBoardApi : IApiEndpoint<Board[]>
     {
         public Authentication ApiAuthentication { get; private set; }
         public String Id { get; private set; }
-        public DateTime Date {get; private set;}
+        public DateTime Date { get; private set; }
 
-        public ArrivalBoardApi(String id, Authentication apiAuthentication, DateTime date)
+        public DepartureBoardApi(String id, Authentication apiAuthentication, DateTime date)
         {
             if (string.IsNullOrWhiteSpace(id))
             {
@@ -33,9 +33,10 @@ namespace Fahrplan
             this.Date = date;
         }
 
+
         public Board[] Get()
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.deutschebahn.com/freeplan/v1/arrivalBoard/" + this.Id + "?date=" + this.Date.ToString("yyyy-MM-ddThh:mm:ss"));
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.deutschebahn.com/freeplan/v1/departureBoard/" + this.Id + "?date=" + this.Date.ToString("yyyy-MM-ddThh:mm:ss"));
 
             request.PreAuthenticate = true;
             request.Accept = "application/json";

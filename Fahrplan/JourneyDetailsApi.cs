@@ -9,33 +9,23 @@ using System.Threading.Tasks;
 
 namespace Fahrplan
 {
-    public class ArrivalBoardApi : IApiEndpoint<Board[]>
+    public class JourneyDetailsApi : IApiEndpoint<TrainLocs[]>
     {
-        public Authentication ApiAuthentication { get; private set; }
-        public String Id { get; private set; }
-        public DateTime Date {get; private set;}
-
-        public ArrivalBoardApi(String id, Authentication apiAuthentication, DateTime date)
+        public JourneyDetailsApi(String id, Authentication apiAuthentication)
         {
-            if (string.IsNullOrWhiteSpace(id))
-            {
-                throw new ArgumentException("message", nameof(id));
-            }
-
-            if (apiAuthentication is null)
-            {
-                throw new ArgumentNullException(nameof(apiAuthentication));
-            }
-
-
-            this.Id = id;
-            this.ApiAuthentication = apiAuthentication;
-            this.Date = date;
+            ApiAuthentication = apiAuthentication ?? throw new ArgumentNullException(nameof(apiAuthentication));
+            Id = id ?? throw new ArgumentNullException(nameof(id));
         }
 
-        public Board[] Get()
+        public Authentication ApiAuthentication { get; private set; }
+
+        public String Id { get; private set; }
+
+
+
+        public TrainLocs[] Get()
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.deutschebahn.com/freeplan/v1/arrivalBoard/" + this.Id + "?date=" + this.Date.ToString("yyyy-MM-ddThh:mm:ss"));
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.deutschebahn.com/freeplan/v1/journeyDetails/" + this.Id);
 
             request.PreAuthenticate = true;
             request.Accept = "application/json";
@@ -63,7 +53,7 @@ namespace Fahrplan
             StreamReader streamReader = new StreamReader(responseStream, System.Text.Encoding.UTF8);
             String content = streamReader.ReadToEnd();
 
-            return JsonConvert.DeserializeObject<Board[]>(content);
+            return JsonConvert.DeserializeObject<TrainLocs[]>(content);
         }
     }
 }

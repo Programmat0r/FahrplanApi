@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Fahrplan
 {
-    public class ArrivalBoard
+    public class Board
     {
         [JsonConstructor]
-        public ArrivalBoard(string name, string type, string boardId, string stopId, string stopName, string dateTime, string origin, string track, string detailsId)
+        public Board(string name, string type, string boardId, string stopId, string stopName, string dateTime, string origin, string track, string detailsId)
         {
             Name = name ?? throw new ArgumentNullException(nameof(name));
             Type = type ?? throw new ArgumentNullException(nameof(type));
@@ -19,7 +19,7 @@ namespace Fahrplan
             StopId = stopId ?? throw new ArgumentNullException(nameof(stopId));
             StopName = stopName ?? throw new ArgumentNullException(nameof(stopName));
             DateTime = dateTime ?? throw new ArgumentNullException(nameof(dateTime));
-            Origin = origin ?? throw new ArgumentNullException(nameof(origin));
+            Origin = origin;
             Track = track ?? throw new ArgumentNullException(nameof(track));
             DetailsId = detailsId ?? throw new ArgumentNullException(nameof(detailsId));
         }

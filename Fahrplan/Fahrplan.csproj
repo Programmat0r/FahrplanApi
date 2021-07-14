@@ -45,14 +45,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrivalBoardApi.cs" />
+    <Compile Include="DepartureBoardApi.cs" />
     <Compile Include="IApiEndpoint.cs" />
-    <Compile Include="ArrivalBoard.cs" />
+    <Compile Include="Board.cs" />
     <Compile Include="Authentication.cs" />
-    <Compile Include="DepartureBoard.cs" />
-    <Compile Include="JourneyDetails.cs" />
+    <Compile Include="JourneyDetailsApi.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="LocationApi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrainLocs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

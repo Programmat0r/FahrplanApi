@@ -12,13 +12,15 @@ namespace FahrplanClient
     {
         static void Main(string[] args)
         {
+             
             String token = File.ReadAllText("Token.key");
 
             // LocationApi locationApi = new Fahrplan.LocationApi("Frankfurt", new Authentication(token));
             //var locations = locationApi.Get();
-            ArrivalBoardApi arrivalBoardApi = new ArrivalBoardApi("8096021", new Authentication(token), DateTime.Now);
-            var boards = arrivalBoardApi.Get();
-
+            //  DepartureBoardApi departureBoardApi = new DepartureBoardApi("8096021", new Authentication(token), DateTime.Now);
+            //var boards = departureBoardApi.Get();
+            JourneyDetailsApi journeyDetailsApi = new JourneyDetailsApi("156462%252F58512%252F820424%252F358058%252F80%253fstation_evaId%253D8000105", new Authentication(token));
+            var journeyDetails = journeyDetailsApi.Get();
         }
     }
 }
