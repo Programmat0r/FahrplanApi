@@ -13,19 +13,25 @@ namespace Fahrplan
     {
         public JourneyDetailsApi(String id, Authentication apiAuthentication)
         {
-            ApiAuthentication = apiAuthentication ?? throw new ArgumentNullException(nameof(apiAuthentication));
-            Id = id ?? throw new ArgumentNullException(nameof(id));
+         
+
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                throw new ArgumentException("message", nameof(id));
+            }
+
+            this.ApiAuthentication = apiAuthentication ?? throw new ArgumentNullException(nameof(apiAuthentication));
+            this.Id = id;
         }
 
         public Authentication ApiAuthentication { get; private set; }
 
         public String Id { get; private set; }
-
-
+        public bool TestMode { get; set; }
 
         public TrainLocs[] Get()
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.deutschebahn.com/freeplan/v1/journeyDetails/" + this.Id);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Api.GetEndpoint(this.TestMode) + "journeyDetails/" + this.Id);
 
             request.PreAuthenticate = true;
             request.Accept = "application/json";

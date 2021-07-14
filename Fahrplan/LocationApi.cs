@@ -13,6 +13,7 @@ namespace Fahrplan
     {
         public String Name { get; private set; }
         public Authentication ApiAuthentication { get; private set; }
+        public bool TestMode { get; set; }
 
         public LocationApi(String name, Authentication apiAuthentication)
         {
@@ -28,7 +29,7 @@ namespace Fahrplan
 
         public Location[] Get()
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.deutschebahn.com/freeplan/v1/location/" + this.Name);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Api.GetEndpoint(this.TestMode) + "location/" + this.Name);
 
             request.PreAuthenticate = true;
             request.Accept = "application/json";

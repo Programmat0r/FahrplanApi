@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api.cs" />
     <Compile Include="ArrivalBoardApi.cs" />
     <Compile Include="DepartureBoardApi.cs" />
     <Compile Include="IApiEndpoint.cs" />

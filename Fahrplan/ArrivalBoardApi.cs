@@ -14,6 +14,7 @@ namespace Fahrplan
         public Authentication ApiAuthentication { get; private set; }
         public String Id { get; private set; }
         public DateTime Date {get; private set;}
+        public bool TestMode { get; set; }
 
         public ArrivalBoardApi(String id, Authentication apiAuthentication, DateTime date)
         {
@@ -35,7 +36,7 @@ namespace Fahrplan
 
         public Board[] Get()
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.deutschebahn.com/freeplan/v1/arrivalBoard/" + this.Id + "?date=" + this.Date.ToString("yyyy-MM-ddThh:mm:ss"));
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Api.GetEndpoint(this.TestMode) + "arrivalBoard/" + this.Id + "?date=" + this.Date.ToString("yyyy-MM-ddThh:mm:ss"));
 
             request.PreAuthenticate = true;
             request.Accept = "application/json";

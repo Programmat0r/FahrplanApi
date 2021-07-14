@@ -20,6 +20,7 @@ namespace FahrplanClient
             //  DepartureBoardApi departureBoardApi = new DepartureBoardApi("8096021", new Authentication(token), DateTime.Now);
             //var boards = departureBoardApi.Get();
             JourneyDetailsApi journeyDetailsApi = new JourneyDetailsApi("156462%252F58512%252F820424%252F358058%252F80%253fstation_evaId%253D8000105", new Authentication(token));
+            journeyDetailsApi.TestMode = true;
             var journeyDetails = journeyDetailsApi.Get();
         }
     }

@@ -9,10 +9,11 @@ namespace Fahrplan
     interface IApiEndpoint<T> where T : class
     {
         Authentication ApiAuthentication { get;}
+        bool TestMode { get; set; }
 
         T Get();
 
-
+      
 
     }
 }

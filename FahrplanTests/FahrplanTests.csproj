@@ -56,6 +56,9 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="ArrivalBoardApiTests.cs" />
+    <Compile Include="DepartureBoardApiTests.cs" />
+    <Compile Include="JourneyDetailsApiTests.cs" />
     <Compile Include="LocationApiTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -22,7 +22,9 @@ namespace Fahrplan.Tests
         {
 
             LocationApi locationApi = new Fahrplan.LocationApi("Frankfurt", new Authentication(this.Token));
+            locationApi.TestMode = true;
             var locations = locationApi.Get();
+          
 
             Assert.AreEqual(locations.Length, 10);
         }
