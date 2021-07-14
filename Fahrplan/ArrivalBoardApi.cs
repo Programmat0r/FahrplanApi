@@ -42,23 +42,11 @@ namespace Fahrplan
             request.PreAuthenticate = true;
             request.Accept = "application/json";
             request.Method = "GET";
+         
 
-            switch (this.ApiAuthentication.Type)
-            {
-                case Authentication.AuthenticationType.Bearer:
-
-                    request.Headers.Add("Authorization", "Bearer " + this.ApiAuthentication.TokenBearer);
-                    break;
-                case Authentication.AuthenticationType.UsernamePassword:
-                    NetworkCredential networkCredentials = new NetworkCredential(this.ApiAuthentication.Username, this.ApiAuthentication.Password);
-
-                    CredentialCache credentialCache = new CredentialCache
-                    {
-                        { request.RequestUri, "Basic", networkCredentials }
-                    };
-                    break;
-            }
-
+            request.Headers.Add("Authorization", "Bearer " + this.ApiAuthentication.TokenBearer);
+                   
+            
             WebResponse response = request.GetResponse();
 
             Stream responseStream = response.GetResponseStream();
