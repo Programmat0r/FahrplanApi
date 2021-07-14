@@ -1,4 +1,4 @@
-# FahrplanApi
+# Deutsche Bahn Fahrplan API Library
 <p>An unofficial .Net library to connect to the Deutsche Bahn Fahrplan API.</p>
 
 <p>I am an independet developer and i am not business related (or in any other way) to the Deutsche Bahn AG.</p>
@@ -12,40 +12,23 @@
 <p>You also need an API Token or an developer Account. You can create register <a href="https://developer.deutschebahn.com/store/site/pages/sign-up.jag">here</a>
 
 <h2>Endpoints</h2>
-<table>
-<thead>
-<tr>
-<th>Endpoint</th>
-<th>Class</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>location</td>
-<td>LocationApi</td>
-</tr>
-<tr>
-<td>arrivalBoard</td>
-<td>ArrivalBoardApi</td>
-</tr>
-<tr>
-<td>departureBoard</td>
-<td>DepartureBoardApi</td>
-</tr>
-<tr>
-<td>journeyDetails</td>
-<td>JourneyDetailsApi</td>
-</tr>
-</tr>
-</tbody>
-</table>
+
+Endpoint | Class | Version
+------------- | ------------- | -------------
+`location` | LocationApi | `v1`
+`arrivalBoard` | ArrivalBoardApi | `v1`
+`departureBoard` | DepartureBoardApi | `v1`
+`journeyDetails` | JourneyDetailsApi | `v1`
+
 
 <h2>Examples</h2>
+<p><a href="https://github.com/Programmat0r/FahrplanApi/blob/main/FahrplanClient/Program.cs">Here</a> is a reference implementation.</a>
 <p>Get all locations containing "Frankfurt"</p>
 
 ```csharp
 var locationApi = new LocationApi("Frankfurt", new Authentication(token));
 locationApi.TestMode = true;
+locationApi.SecureConnection = true;
 var locations = locationApi.Get();
 ```
 
@@ -54,6 +37,7 @@ var locations = locationApi.Get();
 ```csharp
 var arrivalBoardApi = new ArrivalBoardApi(locations[0].Id, new Authentication(token), DateTime.Now);
 arrivalBoardApi.TestMode = true;
+arrivalBoardApi.SecureConnection = true;
 var arrivals = arrivalBoardApi.Get();
 ```
 
@@ -62,6 +46,7 @@ var arrivals = arrivalBoardApi.Get();
 ```csharp
 var departureBoardApi = new DepartureBoardApi(locations[0].Id, new Authentication(token), DateTime.Now);
 departureBoardApi.TestMode = true;
+departureBoardApi.SecureConnection = true;
 var departures = departureBoardApi.Get();
 ```         
           
@@ -70,6 +55,11 @@ var departures = departureBoardApi.Get();
 ```csharp
 var journeyDetailsApi = new JourneyDetailsApi(arrivals[0].DetailsId, new Authentication(token));
 journeyDetailsApi.TestMode = true;
+journeyDetailsApi.SecureConnection = true;
 var journeyDetails = journeyDetailsApi.Get();
 ```
+
+<h2>License</h2>
+
+<p>Code - <a href="http://www.apache.org/licenses/LICENSE-2.0">APACHE LICENSE, VERSION 2.0</a></p>
 
