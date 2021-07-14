@@ -1,13 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Fahrplan
+﻿namespace Fahrplan
 {
-   public class Api
+    using System;
+
+    /// <summary>
+    /// Defines the <see cref="Api" />.
+    /// </summary>
+    public class Api
     {
+        /// <summary>
+        /// The GetEndpoint.
+        /// </summary>
+        /// <param name="testMode">The testMode<see cref="bool"/>.</param>
+        /// <param name="secure">The secure<see cref="bool"/>.</param>
+        /// <returns>The <see cref="String"/>.</returns>
         public static String GetEndpoint(bool testMode, bool secure = true)
         {
 
@@ -16,7 +21,8 @@ namespace Fahrplan
             if (secure)
             {
                 endpoint = "https://";
-            } else
+            }
+            else
             {
                 endpoint = "http://";
             }
@@ -24,11 +30,11 @@ namespace Fahrplan
             if (testMode)
             {
                 return endpoint + "api.deutschebahn.com/freeplan/v1/";
-            } else
+            }
+            else
             {
                 return endpoint + "api.deutschebahn.com/fahrplan-plus/v1/";
             }
-
         }
     }
 }
