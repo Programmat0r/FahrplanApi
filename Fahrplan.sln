@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fahrplan", "Fahrplan\Fahrpl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FahrplanClient", "FahrplanClient\FahrplanClient.csproj", "{B671481A-4731-4DDA-A8BF-F88C44522C42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FahrplanTests", "FahrplanTests\FahrplanTests.csproj", "{AEFC21F7-1B80-423E-8DC0-7393B643DADD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B671481A-4731-4DDA-A8BF-F88C44522C42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B671481A-4731-4DDA-A8BF-F88C44522C42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B671481A-4731-4DDA-A8BF-F88C44522C42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEFC21F7-1B80-423E-8DC0-7393B643DADD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEFC21F7-1B80-423E-8DC0-7393B643DADD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEFC21F7-1B80-423E-8DC0-7393B643DADD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEFC21F7-1B80-423E-8DC0-7393B643DADD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
