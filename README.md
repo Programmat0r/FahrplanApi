@@ -12,33 +12,14 @@
 <p>You also need an API Token or an developer Account. You can create register <a href="https://developer.deutschebahn.com/store/site/pages/sign-up.jag">here</a>
 
 <h2>Endpoints</h2>
-<table>
-<thead>
-<tr>
-<th>Endpoint</th>
-<th>Class</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>location</td>
-<td>LocationApi</td>
-</tr>
-<tr>
-<td>arrivalBoard</td>
-<td>ArrivalBoardApi</td>
-</tr>
-<tr>
-<td>departureBoard</td>
-<td>DepartureBoardApi</td>
-</tr>
-<tr>
-<td>journeyDetails</td>
-<td>JourneyDetailsApi</td>
-</tr>
-</tr>
-</tbody>
-</table>
+
+Endpoint | Class | Version
+------------- | ------------- | -------------
+`location` | LocationApi | `v1`
+`arrivalBoard` | ArrivalBoardApi | `v1`
+`departureBoard` | DepartureBoardApi | `v1`
+`journeyDetails` | JourneyDetailsApi | `v1`
+
 
 <h2>Examples</h2>
 <p><a href="https://github.com/Programmat0r/FahrplanApi/blob/main/FahrplanClient/Program.cs">Here</a> is a reference implementation.</a>
