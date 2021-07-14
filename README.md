@@ -46,6 +46,7 @@
 ```csharp
 var locationApi = new LocationApi("Frankfurt", new Authentication(token));
 locationApi.TestMode = true;
+locationApi.SecureConnection = true;
 var locations = locationApi.Get();
 ```
 
@@ -54,6 +55,7 @@ var locations = locationApi.Get();
 ```csharp
 var arrivalBoardApi = new ArrivalBoardApi(locations[0].Id, new Authentication(token), DateTime.Now);
 arrivalBoardApi.TestMode = true;
+arrivalBoardApi.SecureConnection = true;
 var arrivals = arrivalBoardApi.Get();
 ```
 
@@ -62,6 +64,7 @@ var arrivals = arrivalBoardApi.Get();
 ```csharp
 var departureBoardApi = new DepartureBoardApi(locations[0].Id, new Authentication(token), DateTime.Now);
 departureBoardApi.TestMode = true;
+departureBoardApi.SecureConnection = true;
 var departures = departureBoardApi.Get();
 ```         
           
@@ -70,6 +73,7 @@ var departures = departureBoardApi.Get();
 ```csharp
 var journeyDetailsApi = new JourneyDetailsApi(arrivals[0].DetailsId, new Authentication(token));
 journeyDetailsApi.TestMode = true;
+journeyDetailsApi.SecureConnection = true;
 var journeyDetails = journeyDetailsApi.Get();
 ```
 
